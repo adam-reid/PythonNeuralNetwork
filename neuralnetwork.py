@@ -25,7 +25,8 @@ for iteration in range(10000):
         #use Sigmoid function to calculate results
         output = 1 / (1 + exp(-(dot(training_set_inputs,synaptic_weights))))
 	#adjust the weights using the results and the current knowledge
-	synaptic_weights += dot(training_set_inputs.T,
-                                (training_set_outputs - output) * output * (1-output))
+        synaptic_weights += dot(
+                training_set_inputs.T,
+                (training_set_outputs - output) * output * (1-output))
 #display results to user
 print(1 / (1 + exp(-(dot(array([1,0,0]),synaptic_weights)))))
